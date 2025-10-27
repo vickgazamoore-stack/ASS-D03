@@ -1,34 +1,7 @@
-// const bankName = "first Bank Nigeria"
-// const customerAccounts = [
-//   {
-//     accountNumber: 3111915650, accountName: "gaza", balance: 50000, accountType: savings
-//   },
-
-//   {
-//     accountNumber: 3111915651, accountName: "gaza", balance: 50000, accountType: savings
-//   },
-
-//   {
-//     accountNumber: 3111915652, accountName: "gaza", balance: 50000, accountType: savings
-//   },
-
-//   {
-//     accountNumber: 3111915653, accountName: "gaza", balance: 50000, accountType: savings
-//   },
-
-//   {
-//     accountNumber: 3111915654, accountName: "gaza", balance: 50000, accountType: savings
-//   },
-
-//   {
-//     accountNumber: 3111915655, accountName: "gaza", balance: 50000, accountType: savings
-//   },
-// ]
-
 // Global Variable
 const bankName = "GAZABANK";
 
-// 1. Data Structure: Array of Customer Account Objects
+// 1. Array of objects::::: Customer Account
 let customerAccounts = [
   {
     accountNumber: 3111915650,
@@ -80,7 +53,6 @@ let customerAccounts = [
   },
 ];
 
-// 2. Core Functions
 
 // Function to check balance
 function checkBalance(accountNumber) {
@@ -132,28 +104,28 @@ function withdraw(accountNumber, amount) {
   }
 }
 
-// 3. Execution Sequence
+// 3. Execution Sequence in the console
 
-console.log("====== INITIAL BALANCES ======");
+console.log("********* INITIAL BALANCES *********");
 checkBalance(3111915650); // EKEATOR VICTOR
 checkBalance(3111915651); // JOHN OKAFOR
 
-console.log("\n====== DEPOSIT TRANSACTION ======");
+console.log("\n********* DEPOSIT TRANSACTION *********");
 deposit(3111915650, 20000); // Deposit ₦20,000 into Victor’s account
 
-console.log("\n====== WITHDRAWAL (SUCCESS) ======");
+console.log("\n********* WITHDRAWAL (SUCCESS) *********");
 withdraw(3111915650, 5000); // Withdraw ₦5,000 from Victor’s account
 
-console.log("\n====== WITHDRAWAL (FAILURE) ======");
+console.log("\n********* WITHDRAWAL (FAILURE) *********");
 withdraw(3111915651, 2000000); // Try withdrawing ₦2,000,000 from John’s account
 
-console.log("\n====== FINAL BALANCES ======");
+console.log("\n********* FINAL BALANCES *********");
 checkBalance(3111915650);
 checkBalance(3111915651);
 
-console.log("\n====== SCOPE CHECK ======");
+console.log("\n********** SCOPE CHECK **********");
 try {
-  console.log(feeRate); // Should throw an error since feeRate is locally scoped
+  console.log(feeRate); // this Should throw an error since feeRate is locally scoped
 } catch (error) {
-  console.log("Error: feeRate is not accessible outside withdraw() function (local scope confirmed).");
+  console.log("Error: feeRate cannot be accessed outside withdraw() function (local scope confirmed).");
 }
